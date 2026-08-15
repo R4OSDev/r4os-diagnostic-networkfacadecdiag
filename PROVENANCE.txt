@@ -1,0 +1,10 @@
+CNETD.R4X provenance
+====================
+
+Fachliche Quelle: Commit 259cbfac272c47ac1a7828de973512d17b29ae10,
+Pfad Code/System/Diagnostics/NetworkFacadeCDiag.
+
+Source, Manifest und Dokumentation wurden in 0.64.18 unveraendert uebernommen.
+IMAGE_SCOPE=none bleibt erhalten: Das C-Fassadenmodul wird gebaut, aber nicht
+automatisch in ein R4OS-Image aufgenommen. Neu sind nur Paketpin,
+Buildstarter, Settings und Git-Hygiene.
