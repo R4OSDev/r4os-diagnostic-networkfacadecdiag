@@ -1,12 +1,16 @@
-﻿CNETD ist das C-Referenzprogramm fuer die typisierte Service-/Netzwerkfassade.
+﻿CNETD.R4X
+=========
 
-Es demonstriert DNS, TCP-Connect und UDP-Bind/Send ohne direkten Kernel-
-Netzwerkfallback. R4NET und die jeweiligen R4X-Services muessen importiert und
-verfuegbar sein.
+Stand0.90.81 / Modul 0.1.4
 
-Seit 0.58.29 ist CNETD der C-Console-Pilot des generischen R4MF-v2-Builds:
+C-Referenz fuer wirkliche DNS-/TCP-/UDP-Generation2-Dienstrecords. Kein direkter Netzfallback; R4SYS Query2 vermittelt die externen Anbieter. /DNS NAME, /TCP IPv4 PORT und /UDP IPv4 PORT TEXT bleiben erhalten. UDP besitzt lokalen Port65023; Port0 ist kein zugesicherter Ephemeral-Port. Ganze Bytepraefixe, Socketgeneration, Release und separate Cleanupfrist werden geprueft. IMAGE_SCOPE=none bleibt.
 
-    DevTools\Scripts\Build.bat -app CNETD
-
-Das faktfreie build.zig delegiert an `sdk.addR4MF`; das Artefakt liegt unter
-`Code\zig-out\CNETD.R4X` und uebernimmt R4SYS/R4NET exakt aus dem Manifest.
+Build vom Workspace-Root:
+    ./Repositories/Diagnostics/NetworkFacadeCDiag/Build.sh
+Unter Windows den entsprechenden Build.bat-Starter verwenden.
+Die gemeinsame PowerShell7-Logik waehlt die lokalen SDK-/Contract-Besitzer.
+Artefakt: Artifacts/Modules/NetworkFacadeCDiag/CNETD.R4X
+Manifest: Repositories/Diagnostics/NetworkFacadeCDiag/module.R4MF
+SDK-Profil: r4os-c-generation2; r4_app_main mit echtem App2-Kontext.
+Container-Export: R4XStart2:2; Platform-Imports: R4SYS:Query2:2.
+Aktuelle Fachfaelle und Grenzen: README.md.
